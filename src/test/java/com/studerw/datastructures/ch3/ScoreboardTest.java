@@ -132,7 +132,7 @@ class ScoreboardTest {
     public void removeOnlyEntity() {
         final Scoreboard scoreboard = new Scoreboard(1);
         scoreboard.add(new GameEntity("larry", 5));
-        assertThat(scoreboard.getBoard()[0]).isEqualTo(new GameEntity("larry", 4));
+        assertThat(scoreboard.getBoard()[0]).isEqualTo(new GameEntity("larry", 5));
         scoreboard.remove(0);
         assertThat(scoreboard.getNumEntities()).isEqualTo(0);
         assertThat(scoreboard.getBoard()[0]).isNull();
@@ -151,8 +151,9 @@ class ScoreboardTest {
         assertThat(scoreboard.getBoard()[1].getName()).isEqualTo("james");
         assertThat(scoreboard.getBoard()[2].getName()).isEqualTo("bob");
 
-        scoreboard.remove(0);
+        GameEntity removed = scoreboard.remove(0);
         log.debug("{}", scoreboard);
+        assertThat(removed).isEqualTo(new  GameEntity("bill", 5));
         assertThat(scoreboard.getNumEntities()).isEqualTo(2);
         assertThat(scoreboard.getBoard()[0].getName()).isEqualTo("james");
         assertThat(scoreboard.getBoard()[1].getName()).isEqualTo("bob");
@@ -174,15 +175,17 @@ class ScoreboardTest {
         assertThat(scoreboard.getBoard()[2].getName()).isEqualTo("james");
         assertThat(scoreboard.getBoard()[3].getName()).isEqualTo("bob");
 
-        scoreboard.remove(2);
+        GameEntity removed = scoreboard.remove(2);
         log.debug("{}", scoreboard);
+        assertThat(removed).isEqualTo(new  GameEntity("james", 3));
         assertThat(scoreboard.getNumEntities()).isEqualTo(3);
         assertThat(scoreboard.getBoard()[0].getName()).isEqualTo("bill");
         assertThat(scoreboard.getBoard()[1].getName()).isEqualTo("mary");
         assertThat(scoreboard.getBoard()[2].getName()).isEqualTo("bob");
 
-        scoreboard.remove(0);
+        removed = scoreboard.remove(0);
         log.debug("{}", scoreboard);
+        assertThat(removed).isEqualTo(new  GameEntity("bill", 5));
         assertThat(scoreboard.getNumEntities()).isEqualTo(2);
         assertThat(scoreboard.getBoard()[0].getName()).isEqualTo("mary");
         assertThat(scoreboard.getBoard()[1].getName()).isEqualTo("bob");

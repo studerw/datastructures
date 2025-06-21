@@ -23,7 +23,7 @@ public class Scoreboard {
 
     /**
      *
-     * @param entity add to the board if a slot exists or if the entity.score is greater than the current lowest score in the list. Otherwise, the entity is not added.
+     * @param entity add to the board if a slot exists or if the {@link GameEntity#getScore} is greater than the current lowest score in the list. Otherwise, the entity is not added.
      */
     public void add(GameEntity entity) {
         // if the board is full and the entity.score is less than or equal to the least high score, then just return
@@ -34,7 +34,7 @@ public class Scoreboard {
 
         // if there are still board slots open, then we know we're increasing the numEntities,
         // and this also allows us to set the comparison pointer to the correct slot - either the first empty slot if slots still exist
-        // or the last slot (we know that we're higher than this slot, which we're bumping out of the list, due to the if check above).
+        // or the last slot (we know that we're higher than this slot, which we're bumping out of the list, due to the IF check above).
         if (numEntities < board.length) {
             numEntities++;
         }
@@ -56,13 +56,14 @@ public class Scoreboard {
      *
      * @param i index of board to remove. Throws an exception if the index is illegitimate.
      */
-    public void remove(int i) {
+    public GameEntity remove(int i) {
         if (i < 0 || i >= (numEntities)) {
             log.warn("Cannot remove index: {} from a board of {} entities.",  i, numEntities);
             throw new IllegalArgumentException("Index out of range");
         }
 
         // we know we're definitely removing one due to IF above. So go ahead and subtract 1 from numEntities
+        GameEntity entity = board[i];
         numEntities--;
         // Staring from index to remove, shift everything after to the left (towards the beginning of the list).
         while (i <  numEntities) {
@@ -70,5 +71,6 @@ public class Scoreboard {
             i++;
         }
         board[i] =  null;
+        return entity;
     }
 }
