@@ -10,38 +10,10 @@
 	<url>https://github.com/studerw/datastructures</url>
 	<description>Data Structures Learning</description>
 
-	<!-- about profiles: https://maven.apache.org/guides/introduction/introduction-to-profiles.html -->
-	<!-- about activation: https://maven.apache.org/guides/introduction/introduction-to-profiles.html#implicit-profile-activation -->
-	<!-- about enforcer version range syntax: https://maven.apache.org/enforcer/enforcer-rules/versionRanges.html -->
-	<profiles>
-		<profile>
-			<id>jdk-8-config</id>
-			<activation>
-				<jdk>1.8</jdk>
-			</activation>
-			<properties>
-				<javadocExecutable>${java.home}/../bin/javadoc</javadocExecutable>
-			</properties>
-		</profile>
-		<profile>
-			<id>jdk-21-or-greater-config</id>
-			<activation>
-				<jdk>[21,)</jdk>
-			</activation>
-			<properties>
-				<javadocExecutable>${java.home}/bin/javadoc</javadocExecutable>
-			</properties>
-		</profile>
-	</profiles>
-
 	<properties>
-		<!-- For compatibility with older versions, you can use the source file encoding Cp1252 -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<java.version>21</java.version>
-		<maven.compiler.source>${java.version}</maven.compiler.source>
-		<maven.compiler.target>${java.version}</maven.compiler.target>
-		<!-- Use for Java 1.8 -->
-		<!--<maven.compiler.release>${java.version}</maven.compiler.release>-->
+		<java.version>17</java.version>
+		<javadocExecutable>${java.home}/bin/javadoc</javadocExecutable>
 		<slf4j>2.0.17</slf4j>
 		<logback>1.5.18</logback>
 		<junit>5.13.1</junit>
@@ -52,6 +24,12 @@
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
 			<version>3.17.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.30</version> <!-- or latest stable -->
+			<scope>provided</scope>
 		</dependency>
 
 		<!-- Logging -->
@@ -170,6 +148,9 @@
 				<plugin>
 					<artifactId>maven-compiler-plugin</artifactId>
 					<version>3.13.0</version>
+					<configuration>
+						<release>${java.version}</release>
+					</configuration>
 				</plugin>
 				<!-- https://central.sonatype.com/artifact/org.apache.maven.plugins/maven-surefire-plugin -->
 				<plugin>
@@ -185,7 +166,7 @@
 							<manifestEntries>
 								<Specification-Title>${project.name}</Specification-Title>
 								<Specification-Version>${project.version}</Specification-Version>
-								<Specification-Vendor>${project.organization.name}</Specification-Vendor>
+								<Specification-Vendor>${project.groupId}</Specification-Vendor>
 							</manifestEntries>
 							<manifest>
 								<mainClass>com.studerw.datastructures.App</mainClass>
@@ -266,7 +247,7 @@
 						</execution>
 						<execution>
 							<id>report</id>
-							<phase>test</phase>
+							<phase>verify</phase>
 							<goals>
 								<goal>report</goal>
 							</goals>

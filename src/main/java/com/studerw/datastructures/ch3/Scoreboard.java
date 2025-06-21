@@ -1,30 +1,24 @@
 package com.studerw.datastructures.ch3;
 
-import org.apache.commons.lang3.builder.ToStringBuilder;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.Getter;
+import lombok.ToString;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Example of a sorted list with an "add" method using underlying array
  */
+@ToString
+@Getter
+@Slf4j
 public class Scoreboard {
-    private static final Logger log = LoggerFactory.getLogger(Scoreboard.class);
+    private final GameEntity[] board;
     private int numEntities;
-    private GameEntity[] board;
 
     public Scoreboard(int capacity) {
         if (capacity < 1) {
             throw new IllegalArgumentException("Capacity must be greater than zero");
         }
         this.board = new GameEntity[capacity];
-    }
-
-    public int getNumEntities() {
-        return numEntities;
-    }
-
-    public GameEntity[] getBoard() {
-        return board;
     }
 
     /**
@@ -60,20 +54,21 @@ public class Scoreboard {
 
     /**
      *
-     * @param i index of board to remove
+     * @param i index of board to remove. Throws an exception if the index is illegitimate.
      */
     public void remove(int i) {
-        if (i < 0 || i >= (numEntities -1)) {
+        if (i < 0 || i >= (numEntities)) {
             log.warn("Cannot remove index: {} from a board of {} entities.",  i, numEntities);
             throw new IllegalArgumentException("Index out of range");
         }
-    }
 
-    @Override
-    public String toString() {
-        return new ToStringBuilder(this)
-                .append("numEntities", numEntities)
-                .append("board", board)
-                .toString();
+        // we know we're definitely removing one due to IF above. So go ahead and subtract 1 from numEntities
+        numEntities--;
+        // Staring from index to remove, shift everything after to the left (towards the beginning of the list).
+        while (i <  numEntities) {
+            board[i] = board[i + 1];
+            i++;
+        }
+        board[i] =  null;
     }
 }
