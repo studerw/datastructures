@@ -24,6 +24,7 @@ public class RepeatStr {
         for (int i = 0; i < count; i++) {
             result += x;
         }
+        stopWatch.stop();
         log.debug("Concatenation Time in seconds: {}", stopWatch.getTime(TimeUnit.SECONDS));
         return result;
     }
@@ -42,6 +43,7 @@ public class RepeatStr {
         for (int i = 0; i < count; i++) {
             result.append(x);
         }
+        stopWatch.stop();
         log.debug("StrBuilder Time in seconds: {}", stopWatch.getTime(TimeUnit.SECONDS));
         return result.toString();
     }
