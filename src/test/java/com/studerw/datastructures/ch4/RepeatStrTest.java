@@ -1,16 +1,14 @@
 package com.studerw.datastructures.ch4;
 
+import com.studerw.datastructures.TimedTest;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-import java.util.Objects;
-
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @Slf4j
-class RepeatStrTest {
+class RepeatStrTest extends TimedTest {
 
     @Test
     void repeat1() {

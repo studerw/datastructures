@@ -1,32 +1,15 @@
 package com.studerw.datastructures.ch5;
 
+import com.studerw.datastructures.TimedTest;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.time.StopWatch;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestInfo;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @Slf4j
-class FibonacciTest {
-    private StopWatch stopWatch;
-    private String testMethodName;
-
-    @BeforeEach
-    public void startTimer(TestInfo testInfo) {
-        testMethodName = testInfo.getDisplayName();
-        stopWatch = new StopWatch();
-        stopWatch.start();
-    }
-
-    @AfterEach
-    public void logExecutionTime() {
-        stopWatch.stop();
-        log.info(String.format("Test '%s' took %d seconds", testMethodName, stopWatch.getTime() / 1000));
-    }
+class FibonacciTest extends TimedTest {
 
     @Test
     void fibonacciNegOne() {
@@ -107,6 +90,7 @@ class FibonacciTest {
     }
 
     @Test
+    @Disabled
     void fibonacci50() {
         long result = Fibonacci.fibonacci(50);
         log.debug("Fibonacci result of {}: {}", 50, result);

@@ -1,260 +1,265 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.studerw</groupId>
-	<artifactId>datastructures</artifactId>
-	<version>1.0-SNAPSHOT</version>
-	<packaging>jar</packaging>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.studerw</groupId>
+    <artifactId>datastructures</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
 
-	<name>datastructures</name>
-	<url>https://github.com/studerw/datastructures</url>
-	<description>Data Structures Learning</description>
+    <name>datastructures</name>
+    <url>https://github.com/studerw/datastructures</url>
+    <description>Data Structures Learning</description>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<java.version>17</java.version>
-		<javadocExecutable>${java.home}/bin/javadoc</javadocExecutable>
-		<slf4j>2.0.17</slf4j>
-		<logback>1.5.18</logback>
-		<junit>5.13.1</junit>
-	</properties>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>17</java.version>
+        <javadocExecutable>${java.home}/bin/javadoc</javadocExecutable>
+        <slf4j>2.0.17</slf4j>
+        <logback>1.5.18</logback>
+        <junit>5.13.1</junit>
+    </properties>
 
-	<dependencies>
-		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-lang3</artifactId>
-			<version>3.17.0</version>
-		</dependency>
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<version>1.18.30</version> <!-- or latest stable -->
-			<scope>provided</scope>
-		</dependency>
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.17.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.30</version> <!-- or latest stable -->
+            <scope>provided</scope>
+        </dependency>
 
-		<!-- Logging -->
-		<!-- https://central.sonatype.com/artifact/org.slf4j/log4j-over-slf4j -->
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>log4j-over-slf4j</artifactId>
-			<version>${slf4j}</version>
-			<!--<scope>runtime</scope>-->
-		</dependency>
-		<!-- https://central.sonatype.com/artifact/org.slf4j/jcl-over-slf4j -->
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>jcl-over-slf4j</artifactId>
-			<version>${slf4j}</version>
-			<scope>runtime</scope>
-		</dependency>
-		<!-- https://central.sonatype.com/artifact/org.slf4j/jul-to-slf4j -->
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>jul-to-slf4j</artifactId>
-			<version>${slf4j}</version>
-			<scope>runtime</scope>
-		</dependency>
-		<!-- https://central.sonatype.com/artifact/ch.qos.logback/logback-classic -->
-		<dependency>
-			<groupId>ch.qos.logback</groupId>
-			<artifactId>logback-classic</artifactId>
-			<version>${logback}</version>
-		</dependency>
-		<!-- Testing dependencies-->
-		<!-- https://central.sonatype.com/artifact/org.junit.jupiter/junit-jupiter-api -->
-		<dependency>
-			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter-api</artifactId>
-			<version>${junit}</version>
-			<scope>test</scope>
-		</dependency>
+        <!-- Logging -->
+        <!-- https://central.sonatype.com/artifact/org.slf4j/log4j-over-slf4j -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>log4j-over-slf4j</artifactId>
+            <version>${slf4j}</version>
+            <!--<scope>runtime</scope>-->
+        </dependency>
+        <!-- https://central.sonatype.com/artifact/org.slf4j/jcl-over-slf4j -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <version>${slf4j}</version>
+            <scope>runtime</scope>
+        </dependency>
+        <!-- https://central.sonatype.com/artifact/org.slf4j/jul-to-slf4j -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jul-to-slf4j</artifactId>
+            <version>${slf4j}</version>
+            <scope>runtime</scope>
+        </dependency>
+        <!-- https://central.sonatype.com/artifact/ch.qos.logback/logback-classic -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logback}</version>
+        </dependency>
+        <!-- Testing dependencies-->
+        <!-- https://central.sonatype.com/artifact/org.junit.jupiter/junit-jupiter-api -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit}</version>
+            <scope>test</scope>
+        </dependency>
 
-		<!-- Test -->
-		<dependency>
-			<groupId>org.assertj</groupId>
-			<artifactId>assertj-core</artifactId>
-			<version>3.21.0</version> <!-- Use the latest version -->
-			<scope>test</scope>
-		</dependency>
+        <!-- Test -->
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>3.21.0</version> <!-- Use the latest version -->
+            <scope>test</scope>
+        </dependency>
 
-		<!-- https://central.sonatype.com/artifact/org.junit.jupiter/junit-jupiter-engine -->
-		<dependency>
-			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter-engine</artifactId>
-			<version>${junit}</version>
-			<scope>test</scope>
-		</dependency>
-		<!-- https://central.sonatype.com/artifact/org.junit.jupiter/junit-jupiter-params -->
-		<dependency>
-			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter-params</artifactId>
-			<version>${junit}</version>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
+        <!-- https://central.sonatype.com/artifact/org.junit.jupiter/junit-jupiter-engine -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit}</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- https://central.sonatype.com/artifact/org.junit.jupiter/junit-jupiter-params -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-params</artifactId>
+            <version>${junit}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 
-	<build>
+    <build>
 
-		<!-- Exclude from resources all log-files and all files containing ".user." in their name, for example: "config.user.json", "db.user.properties" -->
-		<resources>
-			<resource>
-				<directory>src/main/resources</directory>
-				<excludes>
-					<exclude>**/*.log</exclude>
-					<exclude>**/*.user.*</exclude>
-				</excludes>
-			</resource>
-		</resources>
+        <!-- Exclude from resources all log-files and all files containing ".user." in their name, for example: "config.user.json", "db.user.properties" -->
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <excludes>
+                    <exclude>**/*.log</exclude>
+                    <exclude>**/*.user.*</exclude>
+                </excludes>
+            </resource>
+        </resources>
 
-		<pluginManagement>
-			<!-- see http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging -->
-			<plugins>
-				<!-- https://central.sonatype.com/artifact/org.apache.maven.plugins/maven-clean-plugin -->
-				<plugin>
-					<artifactId>maven-clean-plugin</artifactId>
-					<version>3.3.2</version>
-				</plugin>
-				<!-- https://central.sonatype.com/artifact/org.apache.maven.plugins/maven-resources-plugin -->
-				<plugin>
-					<artifactId>maven-resources-plugin</artifactId>
-					<version>3.3.1</version>
-					<configuration>
-						<escapeString>\</escapeString>
-					</configuration>
-					<executions>
-						<execution>
-							<id>replace-placeholders-in-readme</id>
-							<phase>validate</phase>
-							<goals>
-								<goal>copy-resources</goal>
-							</goals>
-							<configuration>
-								<outputDirectory>${project.basedir}</outputDirectory>
-								<resources>
-									<resource>
-										<directory>${project.basedir}/src/main/resources/filterable</directory>
-										<includes>
-											<include>README.md</include>
-										</includes>
-										<filtering>true</filtering>
-									</resource>
-								</resources>
-								<encoding>UTF-8</encoding>
-							</configuration>
-						</execution>
-					</executions>
-				</plugin>
-				<!-- https://central.sonatype.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
-				<plugin>
-					<artifactId>maven-compiler-plugin</artifactId>
-					<version>3.13.0</version>
-					<configuration>
-						<release>${java.version}</release>
-					</configuration>
-				</plugin>
-				<!-- https://central.sonatype.com/artifact/org.apache.maven.plugins/maven-surefire-plugin -->
-				<plugin>
-					<artifactId>maven-surefire-plugin</artifactId>
-					<version>3.2.5</version>
-				</plugin>
-				<!-- https://central.sonatype.com/artifact/org.apache.maven.plugins/maven-jar-plugin -->
-				<plugin>
-					<artifactId>maven-jar-plugin</artifactId>
-					<version>3.4.1</version>
-					<configuration>
-						<archive>
-							<manifestEntries>
-								<Specification-Title>${project.name}</Specification-Title>
-								<Specification-Version>${project.version}</Specification-Version>
-								<Specification-Vendor>${project.groupId}</Specification-Vendor>
-							</manifestEntries>
-							<manifest>
-								<mainClass>com.studerw.datastructures.App</mainClass>
-								<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-							</manifest>
-						</archive>
-						<excludes>
-							<exclude>**/logback-test.xml</exclude>
-							<exclude>**/logback.xml</exclude>
-							<exclude>doc/**</exclude>
-						</excludes>
-					</configuration>
-				</plugin>
-				<!-- https://central.sonatype.com/artifact/org.apache.maven.plugins/maven-source-plugin -->
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-source-plugin</artifactId>
-					<version>3.3.1</version>
-					<executions>
-						<execution>
-							<id>attach-sources</id>
-							<goals>
-								<goal>jar</goal>
-							</goals>
-						</execution>
-					</executions>
-				</plugin>
-				<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-javadoc-plugin -->
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-javadoc-plugin</artifactId>
-					<version>3.6.3</version>
-					<configuration>
-						<javadocExecutable>${javadocExecutable}</javadocExecutable>
-						<source>${java.version}</source>
-						<version>true</version>
-						<!-- See more about doclint syntax here: https://docs.oracle.com/en/java/javase/17/docs/specs/man/javadoc.html#additional-options-provided-by-the-standard-doclet -->
-						<doclint>all,-accessibility,-missing</doclint>
-						<additionalJOptions>
-							<additionalJOption>-J-Duser.language=en_US</additionalJOption>
-						</additionalJOptions>
-						<locale>en_US</locale>
-						<bottom><![CDATA[Copyright &copy; {currentYear}, <a href="${project.url}">${project.groupId}<a>]]></bottom>
-					</configuration>
-					<executions>
-						<execution>
-							<id>attach-javadocs</id>
-							<goals>
-								<goal>jar</goal>
-							</goals>
-							<configuration>
-								<doclint>none</doclint>
-							</configuration>
-						</execution>
-					</executions>
-				</plugin>
-				<!-- https://central.sonatype.com/artifact/org.apache.maven.plugins/maven-install-plugin -->
-				<plugin>
-					<artifactId>maven-install-plugin</artifactId>
-					<version>3.1.1</version>
-				</plugin>
-				<!-- https://central.sonatype.com/artifact/org.apache.maven.plugins/maven-deploy-plugin -->
-				<plugin>
-					<artifactId>maven-deploy-plugin</artifactId>
-					<version>3.1.1</version>
-				</plugin>
-				<!-- https://mvnrepository.com/artifact/org.jacoco/jacoco-maven-plugin -->
-				<plugin>
-					<groupId>org.jacoco</groupId>
-					<artifactId>jacoco-maven-plugin</artifactId>
-					<version>0.8.11</version>
-					<executions>
-						<execution>
-							<id>prepare-agent</id>
-							<goals>
-								<goal>prepare-agent</goal>
-							</goals>
-						</execution>
-						<execution>
-							<id>report</id>
-							<phase>verify</phase>
-							<goals>
-								<goal>report</goal>
-							</goals>
-						</execution>
-					</executions>
-				</plugin>
-			</plugins>
-		</pluginManagement>
-	</build>
+        <pluginManagement>
+            <!-- see http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging -->
+            <plugins>
+                <!-- https://central.sonatype.com/artifact/org.apache.maven.plugins/maven-clean-plugin -->
+                <plugin>
+                    <artifactId>maven-clean-plugin</artifactId>
+                    <version>3.3.2</version>
+                </plugin>
+                <!-- https://central.sonatype.com/artifact/org.apache.maven.plugins/maven-resources-plugin -->
+                <plugin>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>3.3.1</version>
+                    <configuration>
+                        <escapeString>\</escapeString>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>replace-placeholders-in-readme</id>
+                            <phase>validate</phase>
+                            <goals>
+                                <goal>copy-resources</goal>
+                            </goals>
+                            <configuration>
+                                <outputDirectory>${project.basedir}</outputDirectory>
+                                <resources>
+                                    <resource>
+                                        <directory>${project.basedir}/src/main/resources/filterable</directory>
+                                        <includes>
+                                            <include>README.md</include>
+                                        </includes>
+                                        <filtering>true</filtering>
+                                    </resource>
+                                </resources>
+                                <encoding>UTF-8</encoding>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+                <!-- https://central.sonatype.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
+                <plugin>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.13.0</version>
+                    <configuration>
+                        <release>${java.version}</release>
+                        <compilerArgs>
+                            <arg>-proc:full</arg> <!-- Explicitly enable annotation processing -->
+                        </compilerArgs>
+                    </configuration>
+                </plugin>
+                <!-- https://central.sonatype.com/artifact/org.apache.maven.plugins/maven-surefire-plugin -->
+                <plugin>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>3.2.5</version>
+                </plugin>
+                <!-- https://central.sonatype.com/artifact/org.apache.maven.plugins/maven-jar-plugin -->
+                <plugin>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>3.4.1</version>
+                    <configuration>
+                        <archive>
+                            <manifestEntries>
+                                <Specification-Title>${project.name}</Specification-Title>
+                                <Specification-Version>${project.version}</Specification-Version>
+                                <Specification-Vendor>${project.groupId}</Specification-Vendor>
+                            </manifestEntries>
+                            <manifest>
+                                <mainClass>com.studerw.datastructures.App</mainClass>
+                                <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                            </manifest>
+                        </archive>
+                        <excludes>
+                            <exclude>**/logback-test.xml</exclude>
+                            <exclude>**/logback.xml</exclude>
+                            <exclude>doc/**</exclude>
+                        </excludes>
+                    </configuration>
+                </plugin>
+                <!-- https://central.sonatype.com/artifact/org.apache.maven.plugins/maven-source-plugin -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>3.3.1</version>
+                    <executions>
+                        <execution>
+                            <id>attach-sources</id>
+                            <goals>
+                                <goal>jar</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-javadoc-plugin -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>3.6.3</version>
+                    <configuration>
+                        <javadocExecutable>${javadocExecutable}</javadocExecutable>
+                        <source>${java.version}</source>
+                        <version>true</version>
+                        <!-- See more about doclint syntax here: https://docs.oracle.com/en/java/javase/17/docs/specs/man/javadoc.html#additional-options-provided-by-the-standard-doclet -->
+                        <doclint>all,-accessibility,-missing</doclint>
+                        <additionalJOptions>
+                            <additionalJOption>-J-Duser.language=en_US</additionalJOption>
+                        </additionalJOptions>
+                        <locale>en_US</locale>
+                        <bottom>
+                            <![CDATA[Copyright &copy; {currentYear}, <a href="${project.url}">${project.groupId}<a>]]></bottom>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>attach-javadocs</id>
+                            <goals>
+                                <goal>jar</goal>
+                            </goals>
+                            <configuration>
+                                <doclint>none</doclint>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+                <!-- https://central.sonatype.com/artifact/org.apache.maven.plugins/maven-install-plugin -->
+                <plugin>
+                    <artifactId>maven-install-plugin</artifactId>
+                    <version>3.1.1</version>
+                </plugin>
+                <!-- https://central.sonatype.com/artifact/org.apache.maven.plugins/maven-deploy-plugin -->
+                <plugin>
+                    <artifactId>maven-deploy-plugin</artifactId>
+                    <version>3.1.1</version>
+                </plugin>
+                <!-- https://mvnrepository.com/artifact/org.jacoco/jacoco-maven-plugin -->
+                <plugin>
+                    <groupId>org.jacoco</groupId>
+                    <artifactId>jacoco-maven-plugin</artifactId>
+                    <version>0.8.11</version>
+                    <executions>
+                        <execution>
+                            <id>prepare-agent</id>
+                            <goals>
+                                <goal>prepare-agent</goal>
+                            </goals>
+                        </execution>
+                        <execution>
+                            <id>report</id>
+                            <phase>verify</phase>
+                            <goals>
+                                <goal>report</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 </project>

@@ -1,14 +1,14 @@
 package com.studerw.datastructures.ch3;
 
+import com.studerw.datastructures.TimedTest;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-class ScoreboardTest {
-    private static final Logger log = LoggerFactory.getLogger(ScoreboardTest.class);
+@Slf4j
+class ScoreboardTest extends TimedTest {
 
     @Test
     void testBadGameboard() {

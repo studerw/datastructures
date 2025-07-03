@@ -1,10 +1,11 @@
 package com.studerw.datastructures.ch3;
 
+import com.studerw.datastructures.TimedTest;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-class GameEntityTest {
+class GameEntityTest extends TimedTest {
 
     @Test
     void testEquals() {

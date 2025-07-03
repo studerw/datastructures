@@ -1,18 +1,17 @@
 package com.studerw.datastructures.ch4;
 
+import com.studerw.datastructures.TimedTest;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.time.StopWatch;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
-import java.util.concurrent.TimeUnit;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @Slf4j
-class PrefixAverageTest {
+class PrefixAverageTest extends TimedTest {
 
     @Test
     void prefixAverage1Null() {
@@ -70,14 +69,7 @@ class PrefixAverageTest {
             x[j] = j + 1.0;
         }
 
-        log.debug("--- Simple Timing for 100_000 prefix1 ---");
-        StopWatch stopWatch = new StopWatch();
-        stopWatch.start();
         double[] result = PrefixAverage.prefixAverage1(x);
-        stopWatch.stop();
-        log.debug("Time elapsed: {}",stopWatch); // Uses StopWatch's toString()
-        log.debug("Time in seconds: {}", stopWatch.getTime(TimeUnit.SECONDS));
-//        log.debug("result: {}", Arrays.toString(result));
 
         assertThat(result).hasSize(100_000);
         assertThat(result[0]).isEqualTo(1.0);
@@ -94,13 +86,7 @@ class PrefixAverageTest {
             x[j] = j + 1.0;
         }
 
-        log.debug("--- Simple Timing for 200_000 prefix1 ---");
-        StopWatch stopWatch = new StopWatch();
-        stopWatch.start();
         double[] result = PrefixAverage.prefixAverage1(x);
-        stopWatch.stop();
-        log.debug("Time elapsed: {}",stopWatch); // Uses StopWatch's toString()
-        log.debug("Time in seconds: {}", stopWatch.getTime(TimeUnit.SECONDS));
 //        log.debug("result: {}", Arrays.toString(result));
 
         assertThat(result).hasSize(200_000);
@@ -166,13 +152,7 @@ class PrefixAverageTest {
             x[j] = j + 1.0;
         }
 
-        log.debug("--- Simple Timing for 100_000 prefix1 ---");
-        StopWatch stopWatch = new StopWatch();
-        stopWatch.start();
         double[] result = PrefixAverage.prefixAverage2(x);
-        stopWatch.stop();
-        log.debug("Time elapsed: {}",stopWatch); // Uses StopWatch's toString()
-        log.debug("Time in seconds: {}", stopWatch.getTime(TimeUnit.SECONDS));
 //        log.debug("result: {}", Arrays.toString(result));
 
         assertThat(result).hasSize(100_000);
@@ -189,13 +169,8 @@ class PrefixAverageTest {
             x[j] = j + 1.0;
         }
 
-        log.debug("--- Simple Timing for 200_000 prefix1 ---");
-        StopWatch stopWatch = new StopWatch();
-        stopWatch.start();
+
         double[] result = PrefixAverage.prefixAverage2(x);
-        stopWatch.stop();
-        log.debug("Time elapsed: {}",stopWatch); // Uses StopWatch's toString()
-        log.debug("Time in seconds: {}", stopWatch.getTime(TimeUnit.SECONDS));
 //        log.debug("result: {}", Arrays.toString(result));
 
         assertThat(result).hasSize(200_000);

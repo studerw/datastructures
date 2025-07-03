@@ -1,5 +1,6 @@
 package com.studerw.datastructures.ch3;
 
+import com.studerw.datastructures.TimedTest;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
@@ -9,7 +10,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @Slf4j
-class InsertionSorterTest {
+class InsertionSorterTest extends TimedTest {
 
     @Test
     void insertionSortNull() {

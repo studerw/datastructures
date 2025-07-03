@@ -3,7 +3,6 @@ package com.studerw.datastructures.ch4;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.time.StopWatch;
 
-import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 @Slf4j
@@ -16,6 +15,7 @@ public class RepeatStr {
      * @param count number of times to repeat char x
      * @return the string
      */
+    @SuppressWarnings("all")
     public static String repeat1(char x, int count) {
         log.debug("--- String concatenation Timing for '{}' repeated {} times ----", x, count);
         StopWatch stopWatch = new StopWatch();
@@ -35,6 +35,7 @@ public class RepeatStr {
      * @param count number of times to repeat char x
      * @return the string
      */
+    @SuppressWarnings("all")
     public static String repeat2(char x, int count) {
         log.debug("--- StringBuilder Timing for {} repeated '{}' times ----", x, count);
         StopWatch stopWatch = new StopWatch();
