@@ -8,18 +8,20 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
 @Slf4j
-class PalindromeTest extends TimedTest {
+class PalindromeDequeTest extends TimedTest {
 
     @Test
     public void palindromeEmpty() {
-        assertThrows(IllegalArgumentException.class, () -> {Palindrome.isPalindrome(null);});
-        assertThrows(IllegalArgumentException.class, () -> {Palindrome.isPalindrome("");});
+        assertThrows(IllegalArgumentException.class, () -> {
+            PalindromeDeque.isPalindrome(null);});
+        assertThrows(IllegalArgumentException.class, () -> {
+            PalindromeDeque.isPalindrome("");});
     }
 
     @Test
     public void palindromeValidOne() {
         String input = "a";
-        boolean isPalindrome = Palindrome.isPalindrome(input);
+        boolean isPalindrome = PalindromeDeque.isPalindrome(input);
         log.debug("isPalindrome - {}: {}", input, isPalindrome);
         assertThat(isPalindrome).isTrue();
     }
@@ -27,7 +29,7 @@ class PalindromeTest extends TimedTest {
     @Test
     public void palindromeValidTwo() {
         String input = "aa";
-        boolean isPalindrome = Palindrome.isPalindrome(input);
+        boolean isPalindrome = PalindromeDeque.isPalindrome(input);
         log.debug("isPalindrome - {}: {}", input, isPalindrome);
         assertThat(isPalindrome).isTrue();
     }
@@ -35,7 +37,7 @@ class PalindromeTest extends TimedTest {
     @Test
     public void palindromeValidThree() {
         String input = "bob";
-        boolean isPalindrome = Palindrome.isPalindrome(input);
+        boolean isPalindrome = PalindromeDeque.isPalindrome(input);
         log.debug("isPalindrome - {}: {}", input, isPalindrome);
         assertThat(isPalindrome).isTrue();
     }
@@ -43,7 +45,7 @@ class PalindromeTest extends TimedTest {
     @Test
     public void palindromeValidLong() {
         String input = "tattarrattat";
-        boolean isPalindrome = Palindrome.isPalindrome(input);
+        boolean isPalindrome = PalindromeDeque.isPalindrome(input);
         log.debug("isPalindrome - {}: {}", input, isPalindrome);
         assertThat(isPalindrome).isTrue();
     }
@@ -51,7 +53,7 @@ class PalindromeTest extends TimedTest {
     @Test
     public void palindromeInvalidLong() {
         String input = "tattarrattatb";
-        boolean isPalindrome = Palindrome.isPalindrome(input);
+        boolean isPalindrome = PalindromeDeque.isPalindrome(input);
         log.debug("isPalindrome - {}: {}", input, isPalindrome);
         assertThat(isPalindrome).isFalse();
     }
@@ -59,7 +61,7 @@ class PalindromeTest extends TimedTest {
     @Test
     public void palindromeInvalidTwo() {
         String input = "bo";
-        boolean isPalindrome = Palindrome.isPalindrome(input);
+        boolean isPalindrome = PalindromeDeque.isPalindrome(input);
         log.debug("isPalindrome - {}: {}", input, isPalindrome);
         assertThat(isPalindrome).isFalse();
     }
@@ -67,7 +69,7 @@ class PalindromeTest extends TimedTest {
     @Test
     public void palindromeInvalidSix() {
         String input = "boobie";
-        boolean isPalindrome = Palindrome.isPalindrome(input);
+        boolean isPalindrome = PalindromeDeque.isPalindrome(input);
         log.debug("isPalindrome - {}: {}", input, isPalindrome);
         assertThat(isPalindrome).isFalse();
     }

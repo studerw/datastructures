@@ -6,7 +6,8 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 
 @Slf4j
-public class Palindrome {
+// implementation of a palindrome algorithm using a standard Java Deque
+public class PalindromeDeque {
 
     // This is time of O(n). If we didn't use a StringBuilder, but instead used String concatenation
     // then we'd get O(n^2)
